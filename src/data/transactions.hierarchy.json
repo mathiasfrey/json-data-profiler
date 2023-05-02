@@ -1,0 +1,24 @@
+{
+    "name": "collection",
+    "type": "Array",
+    "children": [
+        {
+            "name": "sender",
+            "type": "string"
+        },
+        {
+            "name": "receiver",
+            "type": "string"
+        },
+        {
+            "name": "additionalData",
+            "type": "Obj",
+            "children": [
+                {
+                    "name": "labels",
+                    "type": "Array"
+                }
+            ]
+        }
+    ]
+}

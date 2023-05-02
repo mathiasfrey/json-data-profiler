@@ -1,13 +1,77 @@
+html {
+  width: 100%;
+  height: 100%;
+  background: url(./img/pexels-cottonbro-studio-7319080.jpg);
+  background-size: cover;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  padding: 2em;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-size: 2em;
+}
+
+#wrapper {
+  background: #fff;
+  border-radius: 2em;
+  border: 2px solid #eee;
+  ;
+}
+#wrapper a {
+  /* text-decoration: none; */
+
+  color: #444;
+  position: relative;
+  top: -2em;
+  font-size: 0.8em;
+}
+#dropzone {
+
+  width:400px;
+  height:300px;
+
+  border-radius: 2em 2em  0.5em 0.5em;
+}
+
+#dropzone.dragging {
+  animation: mymove 1s 1;
+  background-color: #effd5f;
+}
+
+@keyframes mymove {
+  from {background-color: white;}
+  to {background-color:#effd5f;}
+}
+
+#dropzone .icon {
+  background-image: url(./img/upload.png);
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width:100%;
+  height:150px;
+}
+
+#dropzone button {
+  background: rgb(32,131,231);
+  border: 0;
+  cursor:pointer;
+  border-radius: 0.5em;
+  padding: 1em;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  font-weight: bold;
 }

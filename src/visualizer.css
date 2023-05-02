@@ -1,0 +1,35 @@
+#wrapper2 {
+    background: #fff;
+    border-radius: 2em;
+    border: 2px solid #eee;
+    position: absolute;
+    left: 450px;
+    bottom: 300px;
+  }
+
+  .node {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 1px;
+  }
+  
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1px;
+  }
+
+  .label {
+      font-family: monospace;
+
+  }
+  
+  .type {
+    font-size: 10px;
+    fill: #666;
+  }
+/*   
+  .nullable {
+    font-size: 10px;
+    fill: #999;
+  } */

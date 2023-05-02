@@ -1,0 +1,13 @@
+{
+    "collection": [
+        {
+            "sender": "ABC'",
+            "receiver": "XYZ",
+            "additionalData": {
+                "labels": [
+                    "TRANSFER", "SAVINGS"
+                ]
+            }
+        }
+    ]
+}

@@ -1,3 +1,9 @@
+
+@keyframes appear {
+    0%   {opacity: 0%;}
+    100% {opacity: 100%;}
+  }
+
 #wrapper2 {
     background: #fff;
     border-radius: 2em;
@@ -5,7 +11,11 @@
     position: absolute;
     left: 450px;
     bottom: 300px;
+    animation-name: appear;
+    animation-duration: 1200ms;
   }
+
+  
 
   .node {
     fill: #fff;

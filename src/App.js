@@ -1,41 +1,35 @@
 import './App.css';
-import { useCallback } from 'react';
+import { useState } from 'react';
 
 import Dropzone from './Dropzone.js'; 
-
+import Visualizer from './Visualizer.js';
 
 function App() {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     jsonData: null,
-  //   };
-  // }
-  // this.urxn = '1';
-  // this.state = {
-  //   jsonData: null
-  // }
+  const [rawString, setRawString] = useState("");
 
-  // useCallback((acceptedFiles) => {
+  function setFileState(rs) {
+    setRawString(rs);
+  }
 
-  //   acceptedFiles.map((file) => {
-  //     const reader = new FileReader();
+  function handleFileOpen(fileStr) { 
+    console.log("Received string from file");
+    
+    setFileState(fileStr);
 
-  //     reader.onload = function (e) {
-  //       //console.log('dere', e);
-  //     };
-
-  //     reader.readAsDataURL(file);
-  //     return file;
-  //   });
-  // }, []);
+    // console.log(rawString);
+  }
 
   return (
     <div className="App">
 
-      <Dropzone accept={[".csv, text/csv, application/vnd.ms-excel, application/csv, text/x-csv, application/x-csv, text/comma-separated-values, text/x-comma-separated-values"]}/>
-      
+      <Dropzone 
+        accept={[".csv, text/csv, application/vnd.ms-excel, application/csv, text/x-csv, application/x-csv, text/comma-separated-values, text/x-comma-separated-values"]}
+        onFileOpen={handleFileOpen}
+      />
+
+      {rawString && <Visualizer rawString={rawString}/>}
+
     </div>
   );
 }

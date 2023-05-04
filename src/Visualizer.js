@@ -1,19 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from 'd3';
-import "./index.css";
+// import "./index.css";
 import "./visualizer.css";
-// import hierarchy from "./data/transactions.hierarchy.json"; 
-
 
 function Visualizer(props) {
     
-    const data = props.data;
+    const rawString = props.rawString;
 
-    // const data = hierarchy;
+    const data = JSON.parse(rawString);
 
     return (
         <div id="wrapper2">
-        <TreeDiagram data={data} />
+            <TreeDiagram data={data} />
         </div>
     )
 }
@@ -21,7 +19,6 @@ function Visualizer(props) {
 function TreeDiagram(props) {
     const data = props.data;
     const svgRef = useRef();
-
 
     useEffect(() => {
       const svg = d3.select(svgRef.current);
@@ -49,8 +46,17 @@ function TreeDiagram(props) {
         .attr('d', (d) => {
             const source = { x: d.source.x, y: d.source.y };
             const target = { x: d.target.x, y: d.target.y };
-            const midpoint = { x: (source.x + target.x) / 2, y: (source.y)}; // + target.y) / 3 };
-            const points = [source, midpoint, target];
+
+            const deltax = target.x - source.x;
+            const deltay = target.y - source.y;
+
+            //const midpoint = { x: (source.x + target.x) / 2, y: (source.y)}; // + target.y) / 3 };
+            //const midpoint2 = { x: (source.x + target.x) / 2, y: (source.y + target.y) / 3 };
+            
+            const midpoint1 = { x: source.x + deltax * .05, y: source.y + deltay * .15};
+            const midpoint2 = { x: source.x + deltax * .95, y: source.y + deltay * .2};
+
+            const points = [source, midpoint1, midpoint2, target];
             return curve(points);
         });
       
@@ -74,7 +80,11 @@ function TreeDiagram(props) {
         .attr('class', 'node')
         .attr('cx', (d) => d.x)
         .attr('cy', (d) => d.y)
-        .attr('r', 5)
+        .attr('r', 5);
+      
+      // array
+      // TODO: add visualization for arrays!
+
     }, [data]);
    
     // <svg width={this.props.width} height={this.props.height}>

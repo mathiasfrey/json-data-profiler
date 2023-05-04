@@ -11,6 +11,20 @@
             "type": "string"
         },
         {
+            "name": "amount",
+            "type": "Obj",
+            "children": [
+                {
+                    "name": "value",
+                    "type": "int"
+                },
+                {
+                    "name": "precision",
+                    "type": "int"
+                }
+            ]
+        },
+        {
             "name": "additionalData",
             "type": "Obj",
             "children": [

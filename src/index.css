@@ -26,21 +26,27 @@ code {
   background: #fff;
   border-radius: 2em;
   border: 2px solid #eee;
-  ;
 }
+
+#privacy {
+  background: url(img/privacy.png) no-repeat;
+  line-height: 1em;
+  font-size: .8em;
+  height: 2em;
+  margin: auto;
+  font-weight: bold;
+}
+
 #wrapper a {
   /* text-decoration: none; */
-
   color: #444;
   position: relative;
-  top: -2em;
   font-size: 0.8em;
 }
-#dropzone {
 
+#dropzone {
   width:400px;
   height:300px;
-
   border-radius: 2em 2em  0.5em 0.5em;
 }
 

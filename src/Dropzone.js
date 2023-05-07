@@ -34,6 +34,9 @@ function Dropzone(props) {
             
           </p><button>Browse</button>
         </div>
+        <div id="privacy">
+            Your upload does not leave your computer.
+        </div>
         <a href="https://github.com/mathiasfrey/json-data-profiler">Instructions, sample JSON &amp; license</a>
       </div>
     )

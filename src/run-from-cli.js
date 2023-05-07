@@ -42,7 +42,7 @@ function traverse(obj) {
         } else if (type === 'string') {
           console.log(222);
         } else if (type == 'number') {
-            console.log('NUM');
+            console.log(key, value, 'NUM');
         } else {
           // process other data types
           console.log('ELSE');

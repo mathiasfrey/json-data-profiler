@@ -3,9 +3,26 @@
         {
             "sender": "ABC'",
             "receiver": "XYZ",
+            "amount": {
+                "value": 23,
+                "precision": 2
+            },
             "additionalData": {
                 "labels": [
                     "TRANSFER", "SAVINGS"
+                ]
+            }
+        },
+        {
+            "sender": "2abc'",
+            "receiver": "2xyz",
+            "amount": {
+                "value": 1100,
+                "precision": 2
+            },
+            "additionalData": {
+                "labels": [
+                    "INVESTMENT"
                 ]
             }
         }

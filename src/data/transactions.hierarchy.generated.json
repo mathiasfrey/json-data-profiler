@@ -1,1 +1,40 @@
-{"name":"collection","type":"Array","length":2,"children":[{"name":"sender","type":"string"},{"name":"receiver","type":"string"},{"name":"amount","type":"object","children":[{"name":"value","type":"number"},{"name":"precision","type":"number"}]},{"name":"additionalData","type":"object","children":[{"name":"labels","type":"Array of string","length":2}]}]}
+{
+    "name": "collection",
+    "type": "Array",
+    "length": 2,
+    "children": [
+        {
+            "name": "sender",
+            "type": "string"
+        },
+        {
+            "name": "receiver",
+            "type": "string"
+        },
+        {
+            "name": "amount",
+            "type": "object",
+            "children": [
+                {
+                    "name": "value",
+                    "type": "number"
+                },
+                {
+                    "name": "precision",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "additionalData",
+            "type": "object",
+            "children": [
+                {
+                    "name": "labels",
+                    "type": "Array of string",
+                    "length": 2
+                }
+            ]
+        }
+    ]
+}

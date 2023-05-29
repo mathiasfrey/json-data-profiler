@@ -5,7 +5,13 @@ function getTree(obj) {
 
     traverse(obj, 0, result);
 
-    return result[0]; // tree data struc is an obj; not array that is used for pushing
+    if (result.length == 1) {
+        // tree data struc "often" is an obj; not array that is just
+        // a consequece of pushing into result
+        return result[0]; 
+    }
+    // yet, it can also be a "real" array
+    return {"name": "ROOT", "type": "Array", "children":result}; 
 
 }
 
@@ -23,7 +29,7 @@ function traverse(obj, depth, result) {
             let value = obj[key];
             let type = typeof value;
 
-            console.log(`${' '.repeat(depth * 2)} ${key}: ${type}`);
+            console.log(`${' '.repeat(depth * 2)}${key}: ${type}`);
 
             if (Array.isArray(value)) {
                 // process array  
@@ -46,7 +52,7 @@ function traverse(obj, depth, result) {
                 traverse(value, depth + 1, children);
             } else if (type === 'string') {
                 result.push({ "name": key, "type": type })
-                //console.log(key, value, 'STR');
+                // console.log(key, value, 'STR');
             } else if (type == 'number') {
                 result.push({ "name": key, "type": type })
             } else if (type === 'boolean') {

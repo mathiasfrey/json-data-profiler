@@ -18,6 +18,12 @@ Run the json parsing without the frontend:
 ```
 node src/run-from-cli.js data/test.json
 ```
+
+Testing the logic (apart from the frontend):
+```
+npx jest 
+```
+
 # Refs
 
 https://jsonhero.io/

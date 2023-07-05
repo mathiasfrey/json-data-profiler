@@ -16,10 +16,10 @@ function Dropzone(props) {
         reader.onload = () => {
             handleFileOpen(reader.result);
         };
-        
+       
       })
       
-    }); // no dependency array
+    }, [handleFileOpen]); // no dependency array
 
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
   

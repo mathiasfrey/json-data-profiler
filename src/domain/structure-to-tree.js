@@ -5,7 +5,7 @@ function getTree(obj) {
 
     traverse(obj, 0, result);
 
-    if (result.length == 1) {
+    if (result.length === 1) {
         // tree data struc "often" is an obj; not array that is just
         // a consequece of pushing into result
         return result[0]; 
@@ -47,13 +47,13 @@ function traverse(obj, depth, result) {
 
             } else if (type === 'object') {
                 // process nested object
-                var children = [];
+                children = [];
                 result.push({ "name": key, "attributes": {"type": type}, "children": children })
                 traverse(value, depth + 1, children);
             } else if (type === 'string') {
                 result.push({ "name": key, "attributes": {"type": type} })
                 // console.log(key, value, 'STR');
-            } else if (type == 'number') {
+            } else if (type === 'number') {
                 result.push({ "name": key, "attributes": {"type": type} })
             } else if (type === 'boolean') {
                 result.push({ "name": key, "attributes": {"type": type} })

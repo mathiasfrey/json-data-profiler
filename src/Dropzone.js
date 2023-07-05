@@ -19,7 +19,8 @@ function Dropzone(props) {
         
       })
       
-    }, [])
+    }); // no dependency array
+
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
   
     return (

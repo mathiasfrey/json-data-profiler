@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import * as d3 from 'd3';
+import React from "react";
 
 import "./visualizer.css";
 import { getTree } from "./domain/structure-to-tree";

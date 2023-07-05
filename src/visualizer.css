@@ -10,7 +10,7 @@
     border: 2px solid #eee;
     position: absolute;
     left: 450px;
-    bottom: 300px;
+    bottom: 2em; 
     animation-name: appear;
     animation-duration: 1200ms;
   }

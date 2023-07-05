@@ -1,0 +1,12 @@
+.node__root > g > circle {
+    fill: darkslategray !important;
+  }
+  
+  .node__branch > g > circle {
+    fill: darkolivegreen;
+  }
+  
+  .node__leaf > g > circle {
+    fill: white;
+    /* r: 40; */
+  }

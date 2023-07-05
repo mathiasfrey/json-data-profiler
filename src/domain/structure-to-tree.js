@@ -33,33 +33,33 @@ function traverse(obj, depth, result) {
 
             if (Array.isArray(value)) {
                 // process array  
-
+                // console.log('HER', value);
                 processArray(value, depth);
                 // do not traverse arrays of str or int
                 if ((typeof value[0] === 'object') || Array.isArray(value[0])) {
                     var children = [];
-                    result.push({ "name": key, "type": "Array", length: value.length, "children": children })
+                    result.push({ "attributes": {"type": "Array", length: value.length}, "name": key, "children": children })
                     traverse(value[0], depth + 1, children);
                 } else {
                     // this is an array of num or str
-                    result.push({ "name": key, "type": `Array of ${typeof value[0]}`, length: value.length })
+                    result.push({ "attributes": {"type": `Array of ${typeof value[0]}`, length: value.length}, "name": key })
                 }
 
             } else if (type === 'object') {
                 // process nested object
                 var children = [];
-                result.push({ "name": key, "type": type, "children": children })
+                result.push({ "name": key, "attributes": {"type": type}, "children": children })
                 traverse(value, depth + 1, children);
             } else if (type === 'string') {
-                result.push({ "name": key, "type": type })
+                result.push({ "name": key, "attributes": {"type": type} })
                 // console.log(key, value, 'STR');
             } else if (type == 'number') {
-                result.push({ "name": key, "type": type })
+                result.push({ "name": key, "attributes": {"type": type} })
             } else if (type === 'boolean') {
-                result.push({ "name": key, "type": type })
+                result.push({ "name": key, "attributes": {"type": type} })
             } else {
                 // process other data types
-                console.log('ELSE');
+                console.log('WARNING: UNSUPPORTED DATA TYPE');
             }
         }
     }

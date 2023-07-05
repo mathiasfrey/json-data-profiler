@@ -10,7 +10,12 @@
             "additionalData": {
                 "labels": [
                     "TRANSFER", "SAVINGS"
-                ]
+                ],
+                "numbers": [1,2,3],
+                "enrichments": {
+                    "geo": true,
+                    "fraud": false
+                }
             }
         },
         {
